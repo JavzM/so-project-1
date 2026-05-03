@@ -173,3 +173,60 @@ Para FIFO la (1) es suficiente. Para RR necesitaremos un mecanismo de desalojo q
 - [x]  Iteración 6 — Métricas y documentación
 
 Marcar con `[x]` al completar y validar el checklist correspondiente.
+
+### Prompt
+
+Se utilizó un prompt para generar este documento de manera base, este mismo documento se ha ido modificando conforme se avanzó en el proyecto, sin embargo creemos apto incluirlo como evidencia.
+
+—
+
+Voy a adjuntar la especificación de un proyecto del curso de Sistemas Operativos.
+Necesito que generes un plan de desarrollo iterativo en formato Markdown con
+las siguientes características:
+
+ESTRUCTURA GENERAL:
+
+- Título principal del proyecto y subtítulo "Plan de desarrollo iterativo"
+- Una premisa central: cada iteración debe dejar un sistema compilable y
+ejecutable (nada de "se integra al final")
+- Divide el trabajo en 6 iteraciones incrementales, ordenadas de menor a
+mayor complejidad, donde cada una construye sobre la anterior sin romper
+lo ya hecho
+- Al final incluye una sección "Progreso" con checkboxes para cada
+iteración
+
+POR CADA ITERACIÓN INCLUYE:
+
+1. **Meta**: una frase clara de qué se logra al terminar la iteración
+2. **Archivos a crear**: lista concreta de archivos (.h, .c, etc.) con una
+descripción breve de qué contiene cada uno y las funciones/structs clave
+3. **Decisiones clave** o **Decisiones de diseño**: cuando haya un punto
+donde existan varias formas de resolver algo, explica las opciones,
+cuál se eligió y por qué (prefiere lo simple sobre lo flexible cuando
+sea razonable)
+4. **Criterios de aceptación**: lista verificable de condiciones concretas
+que debe cumplir el código para considerar la iteración terminada
+(comandos exactos a correr, salidas esperadas, invariantes verificables
+con grep o similares)
+5. **Fuera de alcance** (cuando aplique): qué NO se hace en esta iteración
+para evitar scope creep
+
+CRITERIOS DE CALIDAD DEL PLAN:
+
+- Las primeras iteraciones deben ser triviales pero útiles (ej. "binario
+que parsea CLI e imprime config") para establecer base sólida
+- Define structs/enums completos desde la primera iteración aunque no se
+usen todos los campos, para evitar refactors de interfaz
+- Los algoritmos o features comparativos van en iteraciones separadas
+(uno por iteración), no todos juntos
+- Las métricas, reportes y pulido van en la última iteración
+- Cuando el documento original mencione un requisito, asegúrate de que
+esté cubierto en alguna iteración con criterio de aceptación verificable
+- Usa lenguaje técnico preciso pero conciso; nada de relleno
+
+FORMATO:
+
+- Markdown plano, con separadores `--` entre iteraciones
+- Negritas para etiquetas (**Meta:**, **Archivos a crear:**, etc.)
+- Bloques de código inline para nombres de archivos, funciones y comandos
+- Sin emojis
